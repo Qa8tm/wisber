@@ -39,7 +39,7 @@ async def helep(event):
     await event.reply(
             HELP_TEXT,
             buttons=[
-                [Button.switch_inline("Go Inline", query="همسه")]
+                [Button.switch_inline("استعملني في الكروبات", query="همسه")]
                 ]
             )
 
@@ -65,11 +65,11 @@ async def inline(event):
     me = (await dion.get_me()).username
     try:
         inp = event.text.split(None, 1)[1]
-        user, msg = inp.split("")
+        msg, user = inp.split("")
     except IndexError:
         await event.answer(
                 [],
-                switch_pm=f"@{me} [اليوزر][الرساله]",
+                switch_pm=f"@{me} [اليوزر] [الرساله]",
                 switch_pm_param="start"
                 )
     except ValueError:
