@@ -6,8 +6,8 @@
 import os
 
 # Config Vars
-DIONAPI_HASH = "23c93aa64d16911f521bd0b16291af57"
-DIONAPI_KEY = 14624642
+DIONAPI_HASH = "d783f8ce3d816448d29c4cc2258f838a"
+DIONAPI_KEY = 9212418
 DIONBOT_NAME = os.environ.get("BOT_NAME", None) # Your bot name, example: Dion Bot
 BOT_USERNAME = os.environ.get("BOT_USERNAME", None) # Your bot username with (@), example: @WhisperXRobot
 DION_TOKEN = os.environ.get("TOKEN", None) # Your token bot, get one from t.me/botfather
