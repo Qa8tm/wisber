@@ -125,7 +125,4 @@ async def ws(event):
     await event.answer(msg, alert=True)
 
 
-dion_txt += 'عندك سؤال ? راسلني t.me/K_8_U\n'
-dion_txt += f'{DIONBOT_NAME} بدأ ! العمل والتطوير بواسطه مجهول\n'
-print(dion_txt)
 dion.run_until_disconnected()
