@@ -44,12 +44,12 @@ async def helep(event):
             )
 
 
-@dion.on(events.NewMessage(pattern="^[!?/]repo$"))
+@dion.on(events.NewMessage(pattern="^[!?/]Source$"))
 async def repos(event):
     await event.reply(
             REPO_TEXT,
             buttons=[
-                [Button.url("Click Here", "https://telegram.dog/XTZ_HerokuBot?start=U2VvcmFuZ0Rpb24vV2hpc3BlckJvdCBkaW9u")]
+                [Button.url("اضغط هنا", "T.ME/ADWSL")]
                 ]
             )
 
@@ -75,7 +75,7 @@ async def inline(event):
     except ValueError:
         await event.answer(
                 [],
-                switch_pm=f"Give a message too!",
+                switch_pm=f"ارسل همسه!",
                 switch_pm_param="start"
                 )
     try:
@@ -83,28 +83,28 @@ async def inline(event):
     except BaseException:
         await event.answer(
                 [],
-                switch_pm="Invalid User ID/Username",
+                switch_pm="خطأ في  الايدي/اليوزر",
                 switch_pm_param="start"
                 )
         return
     db.update({"user_id": ui.user.id, "msg": msg, "gideon": event.sender.id})
     dion_text = f"""
-A Whisper Has Been Sent To [{ui.user.first_name}](tg://user?id={ui.user.id})!
-Click The Below Button To See The Message!\n
-**Note:** __Only {ui.user.first_name} can open this!__
+تم ارسال همسه الى [{ui.user.first_name}](tg://user?id={ui.user.id})!
+اضغط على الزر في الاسفل لرؤيه الهمسه!\n
+**ملاحظه:** __فقط {ui.user.first_name} يمكنه فتح الهمسه!__
     """
     deon = event.builder.article(
-            title="Send your secret message!",
-            description=f"Powered by {DIONBOT_NAME}",
-            url="https://t.me/DionProjects",
+            title="ارسل همسه!",
+            description=f"تم التطوير بواسطه {DIONBOT_NAME}",
+            url="https://t.me/K_8_U",
             text=dion_text,
             buttons=[
-                [Button.inline(" Show Message 🔓 ", data="همسه")]
+                [Button.inline(" رؤيه الهمسه 🔓 ", data="همسه")]
                 ]
             )
     await event.answer(
             [deon],
-            switch_pm="Yahoo! A secret message.",
+            switch_pm="الهمسه.",
             switch_pm_param="start"
             )
 
@@ -115,18 +115,17 @@ async def ws(event):
     xflzu = [int(db["gideon"])]
     xflzu.append(user)
     if event.sender.id not in xflzu:
-        await event.answer("🔐 This message is not for you ningga!", alert=True)
+        await event.answer("🔐 هاي الهمسه مو الك ولكك!", alert=True)
         return
     msg = db["msg"]
     if msg == []:
         await event.anwswer(
-                "Oops!\nIt's looks like message got deleted from my server!", alert=True)
+                "احا!\nالرساله نمسحت من البوت!", alert=True)
         return
     await event.answer(msg, alert=True)
 
 
-dion_txt = 'By github.com/SeorangDion | t.me/Xflzu\n'
-dion_txt += 'Any questions? Say it at t.me/DionSupport\n'
-dion_txt += f'{DIONBOT_NAME} started! Developed and Maintaned by Dion\n'
+dion_txt += 'عندك سؤال ? راسلني t.me/K_8_U\n'
+dion_txt += f'{DIONBOT_NAME} بدأ ! العمل والتطوير بواسطه مجهول\n'
 print(dion_txt)
 dion.run_until_disconnected()
