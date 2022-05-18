@@ -60,12 +60,12 @@ async def die(event):
         return
     me = (await dion.get_me()).username
 
-@dion.on(events.InlineQuery(pattern="همسه"))
+@dion.on(events.InlineQuery(pattern=""))
 async def inline(event):
     me = (await dion.get_me()).username
     try:
         inp = event.text.split(None, 1)[1]
-        user, msg = inp.split("|")
+        user, msg = inp.split(" ")
     except IndexError:
         await event.answer(
                 [],
