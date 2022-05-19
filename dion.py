@@ -39,7 +39,7 @@ async def helep(event):
     await event.reply(
             HELP_TEXT,
             buttons=[
-                [Button.switch_inline("استعملني في الكروبات", query="همسه")]
+                [Button.switch_inline("استعملني في الكروبات", query="")]
                 ]
             )
 
@@ -60,7 +60,7 @@ async def die(event):
         return
     me = (await dion.get_me()).username
 
-@dion.on(events.InlineQuery(pattern=" "))
+@dion.on(events.InlineQuery(pattern=""))
 async def inline(event):
     me = (await dion.get_me()).username
     try:
@@ -109,7 +109,7 @@ async def inline(event):
             )
 
 
-@dion.on(events.CallbackQuery(data="همسه"))
+@dion.on(events.CallbackQuery(data=""))
 async def ws(event):
     user = int(db["user_id"])
     xflzu = [int(db["gideon"])]
